@@ -4,7 +4,6 @@
 
 **Author:** Muhammad Saad Hussain | [@saadhussain07](https://github.com/saadhussain07)  
 **LinkedIn:** [muhammad-saad-hussain](https://www.linkedin.com/in/muhammad-saad-hussain-28435b3a2/)  
-**Live URL:** [nike-atehdkexf9ggb5bz.southindia-01.azurewebsites.net](https://nike-atehdkexf9ggb5bz.southindia-01.azurewebsites.net/)
 
 ---
 
