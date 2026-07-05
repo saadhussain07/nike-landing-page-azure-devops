@@ -1,0 +1,33 @@
+trigger:
+- main
+
+stages:
+- stage: Build
+  displayName: 'Build & Publish'
+  jobs:
+  - job: Build
+    displayName: 'npm Build Job'
+    pool:
+      vmImage: 'ubuntu-latest'
+
+    steps:
+
+    - task: Npm@1
+      displayName: 'Install Tailwind Dependencies'
+      inputs:
+        command: 'custom'
+        customCommand: 'install -D tailwindcss postcss autoprefixer'
+
+    - task: Npm@1
+      displayName: 'Build Production Bundle'
+      inputs:
+        command: 'custom'
+        customCommand: 'run build'
+
+    - task: Npm@1
+      displayName: 'Publish to Azure Artifacts Feed'
+      inputs:
+        command: 'publish'
+        workingDir: './dist'
+        publishRegistry: 'useFeed'
+        publishFeed: '$(FEED_DETAILS)'
